@@ -24,3 +24,8 @@ user = {
 };
 
 // ----------------------------------------------- Array
+let hobbies: string[];
+hobbies = ["Traveling", "Manga", "Drawing"];
+
+// number[], boolean[], (string | number)[]
+// {name: string; age: number; hobbies: string[]; isAdmin: boolean}[]
