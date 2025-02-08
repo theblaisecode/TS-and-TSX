@@ -86,3 +86,5 @@ creds = {
   email: "theblaisecode@gmail.com",
   password: "1234Blaise",
 };
+
+// ----------------------------------------------- Interfaces vs Type Alias
