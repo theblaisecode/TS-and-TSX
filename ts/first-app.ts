@@ -29,3 +29,22 @@ hobbies = ["Traveling", "Manga", "Drawing"];
 
 // number[], boolean[], (string | number)[]
 // {name: string; age: number; hobbies: string[]; isAdmin: boolean}[]
+
+// ----------------------------------------------- Adding types to function parmeter
+function add(a: number, b: number): number {
+  const result = a + b;
+  return result;
+}
+
+console.log(add(2, 5));
+
+// ----------------------------------------------- Defining function types
+function calculate(
+  a: number,
+  b: number,
+  calcFn: (a: number, b: number) => number
+): void {
+  calcFn(a, b);
+}
+
+calculate(2, 5, add);
