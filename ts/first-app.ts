@@ -88,3 +88,57 @@ creds = {
 };
 
 // ----------------------------------------------- Interfaces vs Type Alias
+
+// ----------------------------------------------- Merging multiple types
+type Admin = {
+  permission: string[];
+};
+
+type AppUser = {
+  username: string;
+};
+
+type AppAdmin = Admin & AppUser;
+
+const newUser: AppAdmin = {
+  permission: ["login", "logout"],
+  username: "Blaise",
+};
+
+// --------- using interface
+
+interface Admin2 {
+  permission: string[];
+}
+
+interface AppUser2 {
+  username: string;
+}
+
+interface AppAdmin2 extends Admin2, AppUser2 {
+  email: string;
+}
+
+const newUser2: AppAdmin2 = {
+  permission: ["login", "logout"],
+  username: "Blaise",
+  email: "theblaisecode@gmail.com",
+};
+
+// ----------------------------------------------- Literal Types
+let role: "admin" | "user" | "editor" | 1;
+
+role = 1;
+role = "admin";
+role = "editor";
+role = "user";
+// role = 23
+
+// ----------------------------------------------- Type Guard (typeof, )
+type Role = "admin" | "user" | "editor" | 1;
+
+function performAction(action: string | number, role: Role): void {
+  if (role === "admin" && typeof action === "number") {
+    console.log("olla");
+  }
+}
