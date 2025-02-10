@@ -144,4 +144,43 @@ function performAction(action: string | number, role: Role): void {
 }
 
 // ----------------------------------------------- Generic Type
+// ------------ creating custom generic types
+type User2 = {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+  id: string | number;
+};
 
+type DataStorage<T> = {
+  storage: T[];
+  add: (data: T) => void;
+};
+
+const textStorage: DataStorage<string> = {
+  storage: [],
+  add(data) {
+    this.storage.push(data);
+  },
+};
+
+const userStorage: DataStorage<User2> = {
+  storage: [],
+  add(user) {},
+};
+
+// ------------ creating custom generic functions
+function merge<T, U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b,
+  };
+}
+
+const newestUser = merge<{ name: string }, { age: number }>(
+  { name: "Blaise" },
+  { age: 12 }
+);
+
+newestUser.age;
+newestUser.name;
