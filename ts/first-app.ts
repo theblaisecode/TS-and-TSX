@@ -134,7 +134,7 @@ role = "editor";
 role = "user";
 // role = 23
 
-// ----------------------------------------------- Type Guard (typeof, )
+// ----------------------------------------------- Type Guard (typeof, if statement)
 type Role = "admin" | "user" | "editor" | 1;
 
 function performAction(action: string | number, role: Role): void {
@@ -142,3 +142,6 @@ function performAction(action: string | number, role: Role): void {
     console.log("olla");
   }
 }
+
+// ----------------------------------------------- Generic Type
+
