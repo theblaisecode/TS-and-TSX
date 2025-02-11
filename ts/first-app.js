@@ -52,8 +52,8 @@ console.log(sub(5, 2));
 function calculateSum(a, b, calcFn) {
   calcFn(a, b);
 }
-console.log(calculateSum(2, 5, add));
-console.log(calculateSum(12, 5, sub));
+calculateSum(2, 5, add);
+calculateSum(12, 5, sub);
 function calculateSum2(a, b, calcFn) {
   calcFn(a, b);
 }

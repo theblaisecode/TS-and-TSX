@@ -53,8 +53,8 @@ function calculateSum(
   calcFn(a, b);
 }
 
-console.log(calculateSum(2, 5, add));
-console.log(calculateSum(12, 5, sub));
+calculateSum(2, 5, add);
+calculateSum(12, 5, sub);
 
 // ----------------------------------------------- Type Alias
 type AddFn = (a: number, b: number) => number;
