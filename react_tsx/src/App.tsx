@@ -1,7 +1,9 @@
+import CourseGoal from "./components/CourseGoal";
+
 function App() {
   return (
     <>
-      <h1>Olla</h1>
+      <CourseGoal />
     </>
   );
 }
