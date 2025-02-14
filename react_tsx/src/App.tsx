@@ -1,8 +1,23 @@
-import CourseGoal from "./components/CourseGoal";
-import Header from "./components/Header";
+import { useState } from "react";
+import Header from "./components/Header.tsx";
 import goalsImg from "./assets/goals.jpg";
+import { CourseGoalArr } from "./types/types.tsx";
+import CourseGoalList from "./components/CourseGoalList.tsx";
 
 function App() {
+  const [goals, setGoals] = useState<CourseGoalArr[]>([]);
+
+  function handleAddGoal() {
+    setGoals((prevGoals) => [
+      { id: Math.random(), title: "Test", description: "testing testing 1, 2" },
+      ...prevGoals,
+    ]);
+  }
+
+  function handleDeleteGoal(id: number) {
+    setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id));
+  }
+
   return (
     <main>
       {/* <CourseGoal
@@ -19,9 +34,9 @@ function App() {
         <h1>Your Course Goals</h1>
       </Header>
 
-      <CourseGoal title="Olla" description="This is Spanish">
-        <p>I spoke Spanish</p>
-      </CourseGoal>
+      <button onClick={handleAddGoal}>Add Goal</button>
+
+      <CourseGoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
     </main>
   );
 }

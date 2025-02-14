@@ -44,7 +44,12 @@ import { type FC, type PropsWithChildren, type ReactNode } from "react";
 
 // OR
 
-type Goal = PropsWithChildren<{ title: string; description: string }>;
+type Goal = PropsWithChildren<{
+  id:number
+  title: string;
+  description: string;
+  onDelete: (id: number) => void;
+}>;
 
 // function CourseGoal({ title, description, children }: Goal) {
 //   return (
@@ -63,7 +68,7 @@ type Goal = PropsWithChildren<{ title: string; description: string }>;
 
 // OR
 
-const CourseGoal: FC<Goal> = ({ title, description, children }) => {
+const CourseGoal: FC<Goal> = ({ id, title, description, onDelete, children }) => {
   return (
     <article>
       <div>
@@ -73,7 +78,7 @@ const CourseGoal: FC<Goal> = ({ title, description, children }) => {
 
       {children}
 
-      <button>Delete</button>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </article>
   );
 };
