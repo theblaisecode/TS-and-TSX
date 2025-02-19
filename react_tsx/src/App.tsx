@@ -3,6 +3,7 @@ import Header from "./components/Header.tsx";
 import goalsImg from "./assets/goals.jpg";
 import { CourseGoalArr } from "./types/types.tsx";
 import CourseGoalList from "./components/CourseGoalList.tsx";
+import NewGoal from "./components/NewGoal.tsx";
 
 function App() {
   const [goals, setGoals] = useState<CourseGoalArr[]>([]);
@@ -34,6 +35,7 @@ function App() {
         <h1>Your Course Goals</h1>
       </Header>
 
+      <NewGoal />
       <button onClick={handleAddGoal}>Add Goal</button>
 
       <CourseGoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
