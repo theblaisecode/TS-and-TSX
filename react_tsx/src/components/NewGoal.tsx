@@ -1,26 +1,39 @@
-import { type FormEvent } from "react";
+import { useEffect, useRef, type FormEvent } from "react";
+import { NewGoalProp } from "../types/types.tsx";
 
-function NewGoal() {
+function NewGoal({ onAddGoal }: NewGoalProp) {
+  const goal = useRef<HTMLInputElement | null>(null);
+  const summary = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    goal.current?.focus();
+  }, []);
+
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const goal = formData.get("goal");
-    const summary = formData.get("summary");
+    const goalTitle = goal.current!.value;
+    const goalDescription = summary.current!.value;
 
-    console.log({ goal, summary });
+    if (goalTitle === "" || goalDescription === "") {
+      alert("Please enter a goal");
+      return;
+    } else {
+      onAddGoal(goalTitle, goalDescription);
+      e.currentTarget.reset();
+    }
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <p>
         <label htmlFor="goal">Your goal</label>
-        <input type="text" id="goal" name="goal" />
+        <input type="text" id="goal" name="goal" ref={goal} />
       </p>
 
       <p>
         <label htmlFor="summary">Short summary</label>
-        <input type="text" id="summary" name="summary" />
+        <input type="text" id="summary" name="summary" ref={summary} />
       </p>
 
       <p>

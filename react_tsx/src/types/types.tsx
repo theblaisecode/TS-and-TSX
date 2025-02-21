@@ -3,3 +3,7 @@ export type CourseGoalArr = {
   title: string;
   description: string;
 };
+
+export type NewGoalProp = {
+  onAddGoal: (goal: string, summary: string) => void;
+};

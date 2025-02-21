@@ -8,11 +8,14 @@ import NewGoal from "./components/NewGoal.tsx";
 function App() {
   const [goals, setGoals] = useState<CourseGoalArr[]>([]);
 
-  function handleAddGoal() {
-    setGoals((prevGoals) => [
-      { id: Math.random(), title: "Test", description: "testing testing 1, 2" },
-      ...prevGoals,
-    ]);
+  function handleAddGoal(goal: string, summary: string) {
+    const newGoal: CourseGoalArr = {
+      id: Math.random(),
+      title: goal,
+      description: summary,
+    };
+
+    setGoals((prevGoals) => [newGoal, ...prevGoals]);
   }
 
   function handleDeleteGoal(id: number) {
@@ -35,8 +38,7 @@ function App() {
         <h1>Your Course Goals</h1>
       </Header>
 
-      <NewGoal />
-      <button onClick={handleAddGoal}>Add Goal</button>
+      <NewGoal onAddGoal={handleAddGoal} />
 
       <CourseGoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
     </main>
