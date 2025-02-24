@@ -45,7 +45,7 @@ import { type FC, type PropsWithChildren, type ReactNode } from "react";
 // OR
 
 type Goal = PropsWithChildren<{
-  id:number
+  id: number;
   title: string;
   description: string;
   onDelete: (id: number) => void;
@@ -68,7 +68,13 @@ type Goal = PropsWithChildren<{
 
 // OR
 
-const CourseGoal: FC<Goal> = ({ id, title, description, onDelete, children }) => {
+const CourseGoal: FC<Goal> = ({
+  id,
+  title,
+  description,
+  onDelete,
+  children,
+}) => {
   return (
     <article>
       <div>
