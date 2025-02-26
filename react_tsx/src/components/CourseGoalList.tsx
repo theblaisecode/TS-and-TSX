@@ -1,12 +1,8 @@
-import { CourseGoalArr } from "../types/types.tsx";
+// import { CourseGoalArr } from "../types/types.tsx";
 import CourseGoal from "./CourseGoal.tsx";
 import InfoBox from "./InfoBox.tsx";
 import { type ReactNode } from "react";
-
-type CourseGoalListProp = {
-  goals: CourseGoalArr[];
-  onDeleteGoal: (id: number) => void;
-};
+import { CourseGoalListProp } from "../types/types.tsx";
 
 function CourseGoalList({ goals, onDeleteGoal }: CourseGoalListProp) {
   if (goals.length === 0) {

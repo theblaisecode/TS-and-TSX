@@ -1,9 +1,4 @@
-import { type ReactNode } from "react";
-
-type InfoBoxProps = {
-  mode: "hint" | "warning";
-  children: ReactNode;
-};
+import { InfoBoxProps } from "../types/types.tsx";
 
 function InfoBox({ mode, children }: InfoBoxProps) {
   if (mode === "hint") {
@@ -15,7 +10,7 @@ function InfoBox({ mode, children }: InfoBoxProps) {
   }
 
   return (
-    <aside className="infobox infobox-warning">
+    <aside className="infobox infobox-warning warning-medium">
       <h2>Warning</h2>
       <p>{children}</p>
     </aside>
