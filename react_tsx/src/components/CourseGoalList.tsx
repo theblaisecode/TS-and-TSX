@@ -1,4 +1,3 @@
-// import { CourseGoalArr } from "../types/types.tsx";
 import CourseGoal from "./CourseGoal.tsx";
 import InfoBox from "./InfoBox.tsx";
 import { type ReactNode } from "react";
@@ -17,7 +16,7 @@ function CourseGoalList({ goals, onDeleteGoal }: CourseGoalListProp) {
 
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning" severity="high">
+      <InfoBox mode="warning" severity="medium">
         You're collecting a lot of goals. Don't put too much on your plate!
       </InfoBox>
     );
