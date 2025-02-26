@@ -11,8 +11,10 @@ function InfoBox(props: InfoBoxProps) {
     );
   }
 
+  // const { severity } = props;
+
   return (
-    <aside className={`infobox infobox-warning warning--${props.severity}`}>
+    <aside className={`infobox infobox-warning warning--${propsseverity}`}>
       <h2>Warning</h2>
       <p>{children}</p>
     </aside>
