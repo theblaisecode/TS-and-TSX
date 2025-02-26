@@ -10,7 +10,7 @@ function InfoBox({ mode, children }: InfoBoxProps) {
   }
 
   return (
-    <aside className="infobox infobox-warning warning-medium">
+    <aside className="infobox infobox-warning warning--medium">
       <h2>Warning</h2>
       <p>{children}</p>
     </aside>

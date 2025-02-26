@@ -18,7 +18,7 @@ function CourseGoalList({ goals, onDeleteGoal }: CourseGoalListProp) {
   if (goals.length >= 4) {
     warningBox = (
       <InfoBox mode="warning">
-        You're collecting a lot of goals.Don't put too much on your plate!
+        You're collecting a lot of goals. Don't put too much on your plate!
       </InfoBox>
     );
   }
