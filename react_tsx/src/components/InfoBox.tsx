@@ -1,6 +1,8 @@
 import { InfoBoxProps } from "../types/types.tsx";
 
-function InfoBox({ mode, severity, children }: InfoBoxProps) {
+function InfoBox(props: InfoBoxProps) {
+  const { children, mode } = props;
+
   if (mode === "hint") {
     return (
       <aside className="infobox infobox-hint">
@@ -10,7 +12,7 @@ function InfoBox({ mode, severity, children }: InfoBoxProps) {
   }
 
   return (
-    <aside className={`infobox infobox-warning warning--${severity}`}>
+    <aside className={`infobox infobox-warning warning--${props.severity}`}>
       <h2>Warning</h2>
       <p>{children}</p>
     </aside>
