@@ -4,7 +4,7 @@ import Container from "./components/Container.tsx";
 import Input from "./components/Input.tsx";
 
 function App() {
-  const inputTest = useRef(null);
+  const inputTest = useRef<HTMLInputElement | null>(null);
 
   return (
     <main>
