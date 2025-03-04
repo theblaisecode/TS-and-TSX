@@ -21,7 +21,8 @@ function App() {
       </p>
 
       {/* Polymorphic Component */}
-      <Container as={Input} />
+      {/* <Container as={Input} /> */}
+      <Container as={Buttons}>Lalaland</Container>
     </main>
   );
 }
