@@ -1,8 +1,11 @@
+import { useRef } from "react";
 import Buttons from "./components/Buttons.tsx";
 import Container from "./components/Container.tsx";
 import Input from "./components/Input.tsx";
 
 function App() {
+  const inputTest = useRef(null);
+
   return (
     <main>
       <h2>Olla</h2>
@@ -23,6 +26,9 @@ function App() {
       {/* Polymorphic Component */}
       {/* <Container as={Input} /> */}
       <Container as={Buttons}>Lalaland</Container>
+
+      {/* forwardRef */}
+      <Input label="Test" id="test" name="test" type="text" ref={inputTest} />
     </main>
   );
 }
