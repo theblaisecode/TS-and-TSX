@@ -1,4 +1,4 @@
-import { type ComponentPropsWithoutRef } from "react";
+import { ElementType, type ComponentPropsWithoutRef } from "react";
 
 export type InputProps = {
   label: string;
@@ -6,10 +6,15 @@ export type InputProps = {
   type: string;
 } & ComponentPropsWithoutRef<"input">;
 
-export type ButtonProps = {
-  element: "button";
-} & ComponentPropsWithoutRef<"button">;
+export type ButtonProps = ComponentPropsWithoutRef<"button"> & {
+  href?: string;
+};
 
-export type AnchorProps = {
-  element: "anchor";
-} & ComponentPropsWithoutRef<"a">;
+export type AnchorProps = ComponentPropsWithoutRef<"a"> & {
+  href?: string;
+};
+
+// Polymorphic Components
+export type ContainerProps = {
+  as: ElementType;
+};

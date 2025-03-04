@@ -1,4 +1,5 @@
 import Buttons from "./components/Buttons.tsx";
+import Container from "./components/Container.tsx";
 import Input from "./components/Input.tsx";
 
 function App() {
@@ -10,19 +11,17 @@ function App() {
 
       <h2>Testing</h2>
       <p>
-        <Buttons element="button" type="submit">
-          Some Button
-        </Buttons>
+        <Buttons type="submit">Some Button</Buttons>
       </p>
 
       <p>
-        <Buttons
-          element="anchor"
-          href="https://www.theblaisecode.netlify.app"
-          target="_blank">
+        <Buttons href="https://www.theblaisecode.netlify.app" target="_blank">
           TheBlaiseCode Portfolio
         </Buttons>
       </p>
+
+      {/* Polymorphic Component */}
+      <Container as={Input} />
     </main>
   );
 }
