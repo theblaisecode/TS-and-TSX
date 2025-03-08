@@ -1,8 +1,20 @@
-import { FormEvent, useRef } from "react";
+import { FormEvent, forwardRef, useImperativeHandle, useRef } from "react";
 import { FormProps } from "../types/types.tsx";
 
-function Form({ onSave, children, ...otherProps }: FormProps) {
+const Form = forwardRef(function Form(
+  { onSave, children, ...otherProps }: FormProps,
+  ref
+) {
   const form = useRef<HTMLFormElement | null>(null);
+
+  useImperativeHandle(ref, () => {
+    return {
+      clear() {
+        console.log("CLEARING");
+        form.current?.reset();
+      },
+    };
+  });
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -10,8 +22,8 @@ function Form({ onSave, children, ...otherProps }: FormProps) {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
     onSave(data);
-    
-    form.current?.reset()
+
+    form.current?.reset();
   }
 
   return (
@@ -19,6 +31,6 @@ function Form({ onSave, children, ...otherProps }: FormProps) {
       {children}
     </form>
   );
-}
+});
 
 export default Form;
