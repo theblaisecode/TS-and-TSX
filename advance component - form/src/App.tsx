@@ -5,10 +5,13 @@ import Input from "./components/Input.tsx";
 import Form from "./components/Form.tsx";
 
 function App() {
+  const customForm = useRef<HTMLInputElement | null>(null);
   const inputTest = useRef<HTMLInputElement | null>(null);
+
   function handleSave(data:unknown) {
     const extractedData = data as {name:string; age:string}
     console.log(extractedData)
+    customForm.current?.clear()
   }
 
   return (
