@@ -23,3 +23,5 @@ export type ContainerProps<T extends ElementType> = {
   as: T; // Required, not optional
   children: ReactNode;
 } & ComponentPropsWithoutRef<T>;
+
+export type FormProps = ComponentPropsWithoutRef<'form'>
