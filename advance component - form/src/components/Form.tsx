@@ -1,8 +1,8 @@
 import { FormEvent, forwardRef, useImperativeHandle, useRef } from "react";
-import { FormProps } from "../types/types.tsx";
+import { FormHandle, FormProps } from "../types/types.tsx";
 
-const Form = forwardRef(function Form(
-  { onSave, children, ...otherProps }: FormProps,
+const Form = forwardRef<FormHandle, FormProps>(function Form(
+  { onSave, children, ...otherProps },
   ref
 ) {
   const form = useRef<HTMLFormElement | null>(null);
@@ -23,7 +23,7 @@ const Form = forwardRef(function Form(
     const data = Object.fromEntries(formData);
     onSave(data);
 
-    form.current?.reset();
+    // form.current?.reset();
   }
 
   return (

@@ -27,3 +27,7 @@ export type ContainerProps<T extends ElementType> = {
 export type FormProps = ComponentPropsWithoutRef<"form"> & {
   onSave: (value: unknown) => void;
 };
+
+export type FormHandle = {
+  clear: () => void;
+};

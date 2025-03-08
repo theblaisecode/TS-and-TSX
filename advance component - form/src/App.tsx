@@ -1,17 +1,18 @@
 import { useRef } from "react";
 import Buttons from "./components/Buttons.tsx";
-import Container from "./components/Container.tsx";
+// import Container from "./components/Container.tsx";
 import Input from "./components/Input.tsx";
 import Form from "./components/Form.tsx";
+import { FormHandle } from "./types/types.tsx";
 
 function App() {
-  const customForm = useRef<HTMLInputElement | null>(null);
-  const inputTest = useRef<HTMLInputElement | null>(null);
+  const customForm = useRef<FormHandle | null>(null);
+  // const inputTest = useRef<HTMLInputElement | null>(null);
 
-  function handleSave(data:unknown) {
-    const extractedData = data as {name:string; age:string}
-    console.log(extractedData)
-    customForm.current?.clear()
+  function handleSave(data: unknown) {
+    const extractedData = data as { name: string; age: string };
+    console.log(extractedData);
+    customForm.current?.clear();
   }
 
   return (
