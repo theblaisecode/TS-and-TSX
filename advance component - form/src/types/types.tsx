@@ -24,4 +24,6 @@ export type ContainerProps<T extends ElementType> = {
   children: ReactNode;
 } & ComponentPropsWithoutRef<T>;
 
-export type FormProps = ComponentPropsWithoutRef<'form'>
+export type FormProps = ComponentPropsWithoutRef<"form"> & {
+  onSave: (value: unknown) => void;
+};

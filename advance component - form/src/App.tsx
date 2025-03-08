@@ -6,10 +6,14 @@ import Form from "./components/Form.tsx";
 
 function App() {
   const inputTest = useRef<HTMLInputElement | null>(null);
+  function handleSave(data:unknown) {
+    const extractedData = data as {name:string; age:string}
+    console.log(extractedData)
+  }
 
   return (
     <main>
-      <Form>
+      <Form onSave={handleSave}>
         {/* <h2>Olla</h2>
         <Input label="Your Name" type="text" name="name" />
         <Input label="Your Age" type="number" name="age" />
