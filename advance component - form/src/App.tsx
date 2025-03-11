@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import Buttons from "./components/Buttons.tsx";
+import Buttons from "./components/UI/Buttons.tsx";
 // import Container from "./components/Container.tsx";
-import Input from "./components/Input.tsx";
-import Form from "./components/Form.tsx";
+import Input from "./components/UI/Input.tsx";
+import Form from "./components/UI/Form.tsx";
 import { FormHandle } from "./types/types.tsx";
 
 function App() {

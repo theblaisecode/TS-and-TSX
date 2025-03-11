@@ -1,5 +1,5 @@
 import { FormEvent, forwardRef, useImperativeHandle, useRef } from "react";
-import { FormHandle, FormProps } from "../types/types.tsx";
+import { FormHandle, FormProps } from "../../types/types.tsx";
 
 const Form = forwardRef<FormHandle, FormProps>(function Form(
   { onSave, children, ...otherProps },

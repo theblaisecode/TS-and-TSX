@@ -1,7 +1,7 @@
 // Polymorphic Components
 
 import { type ElementType } from "react";
-import { ContainerProps } from "../types/types.tsx";
+import { ContainerProps } from "../../types/types.tsx";
 
 function Container<C extends ElementType>({
   as,

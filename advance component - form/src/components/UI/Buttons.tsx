@@ -1,4 +1,4 @@
-import { AnchorProps, ButtonProps } from "../types/types.tsx";
+import { AnchorProps, ButtonProps } from "../../types/types.tsx";
 
 function isAnchorProps(props: ButtonProps | AnchorProps): props is AnchorProps {
   return "href" in props;
