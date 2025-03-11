@@ -9,13 +9,13 @@ function AddTimer() {
 
   function handleSave(data: unknown) {
     const extractedData = data as { name: string; age: string };
-    console.log(extractedData); 
+    console.log(extractedData);
     form.current?.clear();
   }
 
   return (
     <main>
-      <Form ref={form} onSave={handleSave}>
+      <Form ref={form} onSave={handleSave} id="add-timer">
         <Input type="text" label="Name" id="name" name="name" />
         <Input type="number" label="Age" id="age" name="age" />
 
