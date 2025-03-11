@@ -1,7 +1,11 @@
+import Container from "./UI/Container.tsx";
+
 function Timer() {
   return (
-    <div>Timer</div>
-  )
+    <Container as="article">
+      <h2>TODO: TIMER NAME</h2>
+    </Container>
+  );
 }
 
-export default Timer
+export default Timer;
