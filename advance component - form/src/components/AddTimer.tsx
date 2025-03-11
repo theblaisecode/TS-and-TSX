@@ -9,7 +9,7 @@ function AddTimer() {
 
   function handleSave(data: unknown) {
     const extractedData = data as { name: string; age: string };
-    console.log(extractedData);
+    console.log(extractedData); 
     form.current?.clear();
   }
 
