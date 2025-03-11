@@ -1,10 +1,18 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import {
   TimersContextProviderProps,
   TimersContextValue,
 } from "../../types/types.tsx";
 
 export const TimersContext = createContext<TimersContextValue | null>(null);
+
+export function useTimersContext() {
+  const timersCtx = useContext(TimersContext);
+  
+  if (timersCtx === null) {
+    throw new Error("Something went wrong");
+  }
+}
 
 function TimersContextProvider({ children }: TimersContextProviderProps) {
   const ctx: TimersContextValue = {
@@ -16,8 +24,8 @@ function TimersContextProvider({ children }: TimersContextProviderProps) {
   };
 
   return (
-    <TimersCoontext.Provider value={ctx}>{children}</TimersCoontext.Provider>
+    <TimersContext.Provider value={ctx}>{children}</TimersContext.Provider>
   );
 }
 
-export default TimersContextProvider
+export default TimersContextProvider;
